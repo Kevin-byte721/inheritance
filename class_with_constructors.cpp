@@ -5,6 +5,7 @@ class Person{
     private: 
         string name;
         int age;
+
     public:
         Person(string name, int age):name(name), age(age) {}
 
@@ -17,23 +18,37 @@ class Person{
 };
 
 class Student:public Person{
+    private:
+    string studentId;
+    
     public:
-        Student(string name, int age): Person(name, age) {}
+        Student(string name, int age, string studentId): Person(name, age),studentId(studentId) {}
+        string  getStudentId() {
+            return studentId;
+        }
 };
 
-class Professor:public Person{
+class Worker:public Person{
+    private: 
+        string worktype;
+
     public:
-        Professor(string name, int age): Person(name, age) {}
+        Worker(string name, int age, string worktype): Person(name, age), worktype(worktype) {}
+        string getWorkType() {
+            return worktype;
+        }
 };
 
 int main () {
-    Student student1("John", 21);
+    Student student1("John", 21, "2025739152");
     cout << "Student name: " << student1.getName() << endl;
     cout << "Student age: " << student1.getAge() << endl;
-
-    Professor professor1("Jane", 38);
-    cout << "Professor name: " << professor1.getName() << endl;
-    cout << "Professor name: " << professor1.getName() << endl;
+    cout << "Student Id: " << student1.getStudentId() << endl << endl; 
+    
+    Worker worker1("Jane", 38, "Information Security Analyst");
+    cout << "Worker name: " << worker1.getName() << endl;
+    cout << "Worker age: " << worker1.getAge() << endl;
+    cout << "Work Type: " << worker1.getWorkType() << endl << endl;
 
     return 0;
 }
