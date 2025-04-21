@@ -37,18 +37,22 @@ class Worker:public Person{
         string getWorkType() {
             return worktype;
         }
-};
+        void display() {
+            cout << getName() << " is a " << getWorkType() << endl;
+        }
+}; 
 
 int main () {
     Student student1("John", 21, "2025739152");
     cout << "Student name: " << student1.getName() << endl;
     cout << "Student age: " << student1.getAge() << endl;
     cout << "Student Id: " << student1.getStudentId() << endl << endl; 
-    
+
     Worker worker1("Jane", 38, "Information Security Analyst");
     cout << "Worker name: " << worker1.getName() << endl;
     cout << "Worker age: " << worker1.getAge() << endl;
     cout << "Work Type: " << worker1.getWorkType() << endl << endl;
+    worker1.display();
 
     return 0;
 }
