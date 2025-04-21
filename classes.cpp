@@ -35,6 +35,6 @@ int main() {
     e1.displayname();
     e1.setname("Kevin");
     e1.time_in();
-    e1.time_out();
+    e1.time_out(); 
     return 0;
 }
